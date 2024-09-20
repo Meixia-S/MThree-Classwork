@@ -11,7 +11,7 @@ public class InterestCalculator {
   private double amount;
   private int years;
 
-  public static void main(String[] args) {
+  public void calculateCompoundInterest() {
     InterestCalculator IC =  new InterestCalculator();
     IC.intro();
 
@@ -26,7 +26,7 @@ public class InterestCalculator {
     }
   }
 
-  public double calculateInterest() {
+  private double calculateInterest() {
     double compoundedAmount = amount;
     for (int y = 0; y < numOfCompounding; y++) {
       compoundedAmount *= 1 + ((interestRate / numOfCompounding) / 100);
@@ -34,7 +34,7 @@ public class InterestCalculator {
     return Double.parseDouble(df.format(compoundedAmount));
   }
 
-  public void intro() {
+  private void intro() {
     System.out.println("How much do you want to invest? ");
     amount = inputReader.nextInt();
     System.out.println("How many years are investing? ");

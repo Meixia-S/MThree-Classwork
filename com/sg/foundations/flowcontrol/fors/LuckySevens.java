@@ -9,7 +9,8 @@ public class LuckySevens {
   private int rolls;
   private int aboveWaterRolls;
   private int aboveWaterValue;
-  public static void main(String[] args) {
+
+  public void playLuckySevens() {
     LuckySevens luckySevens = new LuckySevens();
     System.out.println("How many dollars do you have? ");
     int amount = luckySevens.inputReader.nextInt();

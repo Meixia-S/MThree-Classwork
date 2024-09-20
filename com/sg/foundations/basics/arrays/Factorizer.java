@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Factorizer {
-  private Scanner inputReader = new Scanner(System.in);
+  private Scanner userInput = new Scanner(System.in);
   private ArrayList<Integer> factors = new ArrayList<>();
-  public static void main(String[] args) {
+
+  public void Factorize() {
     Factorizer factorizer = new Factorizer();
     System.out.println("What number would you like to factor? ");
-    int userNum = factorizer.inputReader.nextInt();
+    int userNum = factorizer.userInput.nextInt();
 
     for (int i = 1; i <= userNum; i++) {
       if (userNum % i == 0) {
@@ -19,7 +20,7 @@ public class Factorizer {
     factorizer.PerfectNumANDPrime(userNum);
   }
 
-  public void PerfectNumANDPrime(int userNum) {
+  private void PerfectNumANDPrime(int userNum) {
     int isPerfectNum = determinePerfectNum(userNum);
 
     if (isPerfectNum == userNum) {
@@ -35,7 +36,7 @@ public class Factorizer {
     }
   }
 
-  public int determinePerfectNum(int userNum) {
+  private int determinePerfectNum(int userNum) {
     int isPerfectNum = 0;
     String factorals = "";
     System.out.println("The factors of " + userNum + " are:");

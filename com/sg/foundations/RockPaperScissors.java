@@ -7,9 +7,9 @@ import java.util.Random;
 public class RockPaperScissors {
   private HashMap<String, Integer> map = new HashMap<>();
   private final Random rand = new Random();
-  private final Scanner userInput = new Scanner(System.in);
+  private final Scanner inputReader = new Scanner(System.in);
   int rounds;
-  public static void main(String[] args) {
+  public void playGame() {
     RockPaperScissors RPS = new RockPaperScissors();
     String answer = "yes";
 
@@ -34,9 +34,9 @@ public class RockPaperScissors {
         System.out.println("The computer is the Overall Winner!");
       }
 
-      RPS.userInput.nextLine();
+      RPS.inputReader.nextLine();
       System.out.println("\nTry Again? (yes/y to continue): ");
-      answer = RPS.userInput.nextLine().toLowerCase();
+      answer = RPS.inputReader.nextLine().toLowerCase();
       System.out.println("\n");
 
     } while (answer.equals("yes") || answer.equals("y"));
@@ -47,7 +47,7 @@ public class RockPaperScissors {
   private void rounds() {
     for (int i = 1; i <= rounds; i++) {
       System.out.println("\nYour Turn!");
-      int turn = userInput.nextInt();
+      int turn = inputReader.nextInt();
       int computerTurn = rand.nextInt(3);
       System.out.println("Computer's Turn: " + (computerTurn + 1));
 
@@ -63,13 +63,13 @@ public class RockPaperScissors {
     }
   }
 
-  public void setup() {
+  private void setup() {
     map.put("tie", 0);
     map.put("player", 0);
     map.put("computer", 0);
 
     System.out.println("How many rounds do you want to play (1- 10)?");
-    rounds = userInput.nextInt();
+    rounds = inputReader.nextInt();
     System.out.println("\n");
   }
 }
