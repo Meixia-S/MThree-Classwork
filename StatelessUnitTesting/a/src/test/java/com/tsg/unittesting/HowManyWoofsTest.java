@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  */
 public class HowManyWoofsTest {
 
-    /*  Test Plan:
+    /*  IO.Address.Test Plan:
     **  howManyWoofs(10)   -> "Woof! Woof! Woof!"
     **  howManyWoofs(5)    -> "Woof! Woof!"
     **  howManyWoofs(2)    -> "Woof! Woof! Woof!"

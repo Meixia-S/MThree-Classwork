@@ -1,6 +1,8 @@
 package DVD;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class DVD {
   private String title;
@@ -8,10 +10,10 @@ public class DVD {
   private String mpaaRating;
   private String directorName;
   private String studio;
-  private String userRatingOrNote;
+  private List<String> userRatingOrNote;
 
   // Constructor
-  public DVD (String title, LocalDate releaseDate, String mpaaRating, String directorName, String studio, String userRatingOrNote) {
+  public DVD (String title, LocalDate releaseDate, String mpaaRating, String directorName, String studio, List<String> userRatingOrNote) {
     this.title = title;
     this.releaseDate = releaseDate;
     this.mpaaRating = mpaaRating;
@@ -40,7 +42,7 @@ public class DVD {
     return studio;
   }
 
-  public String getUserRatingOrNote() {
+  public List<String> getUserRatingOrNote() {
     return userRatingOrNote;
   }
 
@@ -65,8 +67,8 @@ public class DVD {
     this.studio = studio;
   }
 
-  public void setUserRatingOrNote(String userRatingOrNote) {
-    this.userRatingOrNote = userRatingOrNote;
+  public void addUserRatingOrNote(String userRatingOrNote) {
+    this.userRatingOrNote.add(userRatingOrNote);
   }
 
   @Override
@@ -77,7 +79,15 @@ public class DVD {
             ", mpaaRating='" + mpaaRating + '\'' +
             ", directorName='" + directorName + '\'' +
             ", studio='" + studio + '\'' +
-            ", userRatingOrNote='" + userRatingOrNote + '\'' +
+            ", userRatingOrNote='" + turingIntoString(userRatingOrNote) + '\'' +
             '}';
+  }
+
+  private StringBuilder turingIntoString(List<String> userRatingOrNote) {
+    StringBuilder stringBuilder = new StringBuilder();
+    for (String note : userRatingOrNote) {
+      stringBuilder.append(note + "\n");
+    }
+    return stringBuilder;
   }
 }

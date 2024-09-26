@@ -30,7 +30,7 @@ public class StudentQuizGrades {
       map.putIfAbsent(name, new ArrayList<>());
       while (true) {
         try {
-          Double score = userIO.readDouble("Enter Another Test Score: ");
+          Double score = userIO.readDouble("Enter Another IO.Address.Test Score: ");
           map.get(name).add(score);
         } catch (InputMismatchException e) {
           break;

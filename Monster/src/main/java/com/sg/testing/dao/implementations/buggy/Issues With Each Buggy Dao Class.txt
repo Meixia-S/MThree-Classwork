@@ -1,0 +1,19 @@
+BadMonsterDaoA:
+- getMonster does not check if id exist before returning, so it returns null at times.
+
+BadMonsterDaoB:
+- removeMonster only retrieves the Monster with the given id and does not actually delete it.
+
+BadMonsterDaoC:
+- getAllMonsters traverses an empty list and tries to add its items to itself.
+    (aka a completely logical mess)
+
+BadMonsterDaoD:
+- updateMonster puts a new entry into the map regardless if the id already existed in the map.
+
+BadMonsterDaoE:
+- getMonster removes a Monster from the map and returns it instead of just returning it.
+
+BadMonsterDaoF:
+- getAllMonsters adds each Monster two times and therefore returns a list twice the size it
+should be.

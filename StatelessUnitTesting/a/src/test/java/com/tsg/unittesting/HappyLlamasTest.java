@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class HappyLlamasTest {
     
-    /*  Test Plan:
+    /*  IO.Address.Test Plan:
     **  Normal trampoline tests!
     **  areTheLlamasHappy(false, 10) → false
     **  areTheLlamasHappy(false, 24) → true
